@@ -13,9 +13,9 @@ const buildQueryString = ( limit = 100, page = 1 ) => {
 
 // Participants
 // https://github.com/DonorDrive/PublicAPI/blob/master/docs/1.0/resources/participants.md
-export const countParticipants = async ( limit, page ) => ( await get( `${BASE_URL}/participants${buildQueryString( 1 )}` ) ).totalRecords;
+export const countParticipants = async ( limit, page ) => ( await get( `${BASE_URL}/participants${buildQueryString( 1 )}` ).totalRecords );
 export const getParticipants = async ( limit, page ) => await get( `${BASE_URL}/participants${buildQueryString( limit, page )}` );
-//export const findParticpantByName = async displayName => await get( `${BASE_URL}/participants?orderBy=displayName&displayName=${displayName}` );
+export const findParticpantByName = async displayName => await get( `${BASE_URL}/participants?where=displayName LIKE '${displayName}'` );
 export const getParticipant = async participantId => await get( `${BASE_URL}/participants/${participantId}` );
 export const getParticipantActivity = async participantId => await get( `${BASE_URL}/participants/${participantId}/activity` );
 export const getParticipantBadges = async participantId => await get( `${BASE_URL}/participants/${participantId}/badges` );
@@ -24,9 +24,9 @@ export const getParticipantDonors = async (participantId, limit, page) => await 
 
 // Teams
 // https://github.com/DonorDrive/PublicAPI/blob/master/docs/1.0/resources/teams.md
-export const countTeams = async ( limit, page ) => ( await get( `${BASE_URL}/teams${buildQueryString( 1 )}` ) ).totalRecords;
+export const countTeams = async ( limit, page ) => ( await get( `${BASE_URL}/teams${buildQueryString( 1 )}` ).totalRecords );
 export const getTeams = async ( limit, page ) => await get( `${BASE_URL}/teams${buildQueryString( limit, page )}` );
-//export const findTeamByName = async teamName => await get( `${BASE_URL}/teams/${teamName}` );
+export const findTeamByName = async teamName => await get( `${BASE_URL}/teams?where=name LIKE '${teamName}'` );
 export const getTeam = async teamId => await get( `${BASE_URL}/teams/${teamId}` );
 export const getTeamActivity = async teamId => await get( `${BASE_URL}/teams/${teamId}/activity` );
 export const getTeamBadges = async teamId => await get( `${BASE_URL}/teams/${teamId}/badges` );
