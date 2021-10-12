@@ -78,17 +78,17 @@ with a `totalRecords` count and the results in a `records` array:
 
 ### Participants
 
-Each method here, with the exception of `getParticipants`, requires a `participantId`. You can
-get a `participantId` from the results of `getParticipant`, or from the URL of a participant
-on the Extra Life website.
-
-The URL will look like: `https://extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=[PARTICIPANT ID HERE]`
+Each method here, with the exceptions of `countParticipants`, `getParticipants`, and `getParticipantByName` require a `participantId`. You can get a `participantId` from the results of `getParticipantByName` or from the URL of a participant
+on the Extra Life website. The URL will look like:
+- `https://extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=[PARTICIPANT ID HERE]`
 
 ---
 
 Available methods:
 
+- [countParticipants](#countParticipants)
 - [getParticipants](#getParticipants)
+- [getParticipantByName](#getParticipantByName)
 - [getParticipant](#getParticipant)
 - [getParticipantActivity](#getParticipantActivity)
 - [getParticipantBadges](#getParticipantBadges)
@@ -97,27 +97,33 @@ Available methods:
 
 ---
 
-#### `getParticipants(limit = 100, page = 1)`
+#### `countParticipants()`
+
+Returns a current count of all participants in the current Extra Life event.
+
+#### `getParticipants( limit = 100, page = 1 )`
 
 Retrieves all participants in the current Extra Life event.
 
-#### `getParticipant(participantId)`
+#### `getParticipantByName( participantName )`
+
+#### `getParticipant( participantId )`
 
 Retrieves information about a given participant.
 
-#### `getParticipantActivity(participantId)`
+#### `getParticipantActivity( participantId )`
 
 Retrieves the five most recent activities for a given participant.
 
-#### `getParticipantBadges(participantId)`
+#### `getParticipantBadges( participantId )`
 
 Retrieves the badges a given participant has earned.
 
-#### `getParticipantDonations(participantId, limit = 100, page = 1)`
+#### `getParticipantDonations( participantId, limit = 100, page = 1 )`
 
 Retrieves all donataions a given participant has received.
 
-#### `getParticipantDonors(participantId, limit = 100, page = 1)`
+#### `getParticipantDonors( participantId, limit = 100, page = 1 )`
 
 Retrieves all donors whom have donated to a given participant.
 
@@ -125,17 +131,18 @@ Retrieves all donors whom have donated to a given participant.
 
 ### Teams
 
-Each method here, with the exception of `getTeams`, requires a `teamId`. You can get a
-`teamId` from the results of `getTeam`, or from the URL of a team on the Extra Life
-website.
-
-The URL will look like: `https://www.extra-life.org/index.cfm?fuseaction=donordrive.team&teamID=[TEAM ID HERE]`
+Each method here, with the exceptions of `countTeams`, `getTeams`, and `getTeamByName` require a `teamId`.  You can get a
+`teamId` from the results of `getTeamByName` or from the URL of a team on the Extra Life
+website. The URL will look like:
+- `https://www.extra-life.org/index.cfm?fuseaction=donordrive.team&teamID=[TEAM ID HERE]`
 
 ---
 
 Available methods:
 
+- [countTeams](#countTeams)
 - [getTeams](#getTeams)
+- [getTeamByName](#getTeamByName)
 - [getTeam](#getTeam)
 - [getTeamActivity](#getTeamActivity)
 - [getTeamBadges](#getTeamBadges)
@@ -145,11 +152,17 @@ Available methods:
 
 ---
 
-#### `getTeams(limit = 100, page = 1)`
+#### `countTeams()`
+
+Returns a current count of all teams in the current Extra Life event.
+
+#### `getTeams( limit = 100, page = 1 )`
 
 Retrieves all teams in the current Extra Life event.
 
-#### `getTeam(teamId)`
+#### `getTeamByName( teamName )`
+
+#### `getTeam( teamId )`
 
 Retrieves information about a given team.
 
@@ -182,5 +195,6 @@ over 5 years and really enjoy being able to provide hope to children in need, es
 all they want to do is feel better and be kids!
 
 If you used this module, or are just feeling generous, [please consider donating to this
-amazing cause](https://www.extra-life.org/participant/goyney). Your donations directly
-benefit Children's Miracle Network Hospitals and are tax deductable.
+amazing cause](https://www.extra-life.org/participant/ShoeMaker). Your donations directly
+benefit Children's Miracle Network Hospitals and are tax deductable. My choice of hospital is:
+[![The Barbara Bush Children's Hospital at Maine Medical Center](https://images.childrensmiraclenetworkhospitals.org/hospital/Logos/TheBarbaraBushChildrensHospitalatMaineMedicalCenter.jpg)](https://www.mainehealth.org/Barbara-Bush-Childrens-Hospital)
