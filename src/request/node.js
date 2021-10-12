@@ -42,7 +42,7 @@ export default ( url, count = false ) => {
 
         res.on( 'data', chunk => { data += chunk; } );
 
-        res.on('end', () => {
+        res.on( 'end', () => {
           if ( numRecords !== undefined ) {
             return resolve( {
               totalRecords: parseInt( numRecords ),
