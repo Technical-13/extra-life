@@ -53,6 +53,6 @@ export default ( url, count = false ) => {
           return resolve( JSON.parse( data ) );
         } );
       } )
-      .on( 'error', reject );
+      .on( 'error', err => reject( new Error( 'Error requesting from Extra-life API.', { cause: err } ) ) );
   } );
 };
