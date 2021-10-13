@@ -11,7 +11,7 @@ const buildQueryString = ( limit = 100, page = 1, getName ) => {
   limit = ( !!parsedLimit ? parsedLimit : 100 );
   page = ( ( !!parsedPage ? parsedPage : 1 ) || 1 );
   const offset = ( page === 1 ? 1 : limit * ( page - 1 ) );
-  return `?limit=${limit}&offset=${offset}${doName}`;
+  return `?version=1.2&limit=${limit}&offset=${offset}${doName}`;
 };
 
 // Participants
